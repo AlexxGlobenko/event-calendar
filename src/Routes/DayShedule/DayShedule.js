@@ -94,7 +94,7 @@ class DayShedule extends Component {
           </div>
         )}
         {currentDayEvents && (
-          <div class="daySheduleContainer">
+          <div className="daySheduleContainer">
             {events.map((event) => {
                 return (
                   <ExpansionEvent
