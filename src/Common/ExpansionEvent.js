@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import {
   Button,
@@ -49,6 +49,12 @@ export const ExpansionEvent = ({ event, onEditClick, eventKey }) => {
     </StyledExpansionPanel>
   )
 }
+
+ExpansionEvent.propTypes = {
+  event: PropTypes.shape().isRequired,
+  onEditClick: PropTypes.func.isRequired,
+  eventKey: PropTypes.string.isRequired,
+};
 
 const StyledExpansionPanel = styled(ExpansionPanel)`
   margin-bottom: 20px;
