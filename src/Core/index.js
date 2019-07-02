@@ -56,7 +56,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  user: PropTypes.shape,
+  user: PropTypes.shape(),
   logOut: PropTypes.func.isRequired,
   isAuthorized: PropTypes.bool,
   isUserAuthenticated: PropTypes.func.isRequired,
