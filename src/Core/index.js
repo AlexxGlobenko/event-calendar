@@ -1,24 +1,23 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Header from '../Common/Header';
 import Calendar from '../Routes/Calendar/Calendar';
 import AuthFrom from '../Routes/AuthForm';
 import DayShedule from '../Routes/DayShedule/DayShedule';
-import firebase from './firebase';
 import connect from './connect';
 
 
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     isAuthorized: false,
-  //   }
-  // }
 
   componentDidMount() {
     const { isUserAuthenticated } = this.props;
     isUserAuthenticated();
+  }
+
+  redirect = () => {
+    return (
+      <Redirect to="/calendar" />
+    );
   }
 
   render() {
@@ -28,6 +27,7 @@ class App extends React.Component {
       <BrowserRouter>
         <Header  user={user} logOut={logOut} />
         <Switch>
+        <Route exact path="/" render={this.redirect}/>
           <Route
             exact
             path="/login"
