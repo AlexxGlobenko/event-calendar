@@ -19,7 +19,6 @@ export const SignUpForm = ({ onTextFieldValueChange, email, password, name, subm
           id="outlined-password-input"
           label="Password"
           type="password"
-          defaultValue=""
           className="textField"
           margin="normal"
           variant="outlined"
@@ -29,7 +28,6 @@ export const SignUpForm = ({ onTextFieldValueChange, email, password, name, subm
         <TextField
           id="outlined-name-input"
           label="Name"
-          defaultValue=""
           className="textField"
           margin="normal"
           variant="outlined"

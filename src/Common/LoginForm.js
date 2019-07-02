@@ -20,7 +20,6 @@ export const LoginForm = ({ onTextFieldValueChange, email, password, submit }) =
           id="outlined-password-input"
           type="password"
           label="Password"
-          defaultValue=""
           className="textField"
           margin="normal"
           variant="outlined"
