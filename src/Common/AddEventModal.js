@@ -110,3 +110,17 @@ export default class AddEventModal extends Component {
     )
   }
 }
+
+AddEventModal.propTypes = {
+  editableEventData: PropTypes.shape,
+  open: PropTypes.bool,
+  onClose: PropTypes.func.isRequired,
+  submitEvent: PropTypes.func.isRequired,
+  eventKey: PropTypes.string,
+};
+
+AddEventModal.defaultProps = {
+  editableEventData: null,
+  open: false,
+  eventKey: '',
+};
