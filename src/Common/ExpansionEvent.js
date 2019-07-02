@@ -34,7 +34,7 @@ export const ExpansionEvent = ({ event, onEditClick, eventKey }) => {
         <ul>
           {event.attendees.split(',').map((attendy) => {
             return (
-              <li>{attendy}</li>
+              <li key={attendy}>{attendy}</li>
             )
           })}
         </ul>
