@@ -130,6 +130,19 @@ class DayShedule extends Component {
   }
 }
 
+DayShedule.propTypes = {
+  currentMonthEvents: PropTypes.shape(),
+  gotEvents: PropTypes.bool,
+  getCurrentMonthEvents: PropTypes.func.isRequired,
+  userData: PropTypes.shape()
+};
+
+DayShedule.defaultProps = {
+  currentMonthEvents: null,
+  gotEvents: false,
+  userData: null,
+};
+
 export default withRouter(protector.ForLogin(connect(DayShedule)));
 
 const StyledMainContainer = styled.div`
