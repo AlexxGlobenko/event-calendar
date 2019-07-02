@@ -65,8 +65,8 @@ class DayShedule extends Component {
     if (!gotEvents) { return <StyledMainContainer /> }
 
     const events = currentDayEvents && Object.keys(currentDayEvents).map(key => currentDayEvents[key]).sort((a, b) => {
-      const dateA = new Date(a);
-      const dateB = new Date(b);
+      const dateA = new Date(a.time);
+      const dateB = new Date(b.time);
       return dateA > dateB ? 1 : dateA === dateB ? 0 : -1;
     });
 
