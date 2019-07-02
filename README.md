@@ -1,8 +1,8 @@
-## Install
+## Installation
 
 `git clone https://github.com/sashaglobenko/event-calendar.git`
 
-Then in directory with project run via terminal 
+`cd event-calendar`
 
 `npm install`
 
