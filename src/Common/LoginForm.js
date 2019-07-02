@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button, TextField } from '@material-ui/core/';
 
 export const LoginForm = ({ onTextFieldValueChange, email, password, submit }) => {
@@ -29,3 +30,15 @@ export const LoginForm = ({ onTextFieldValueChange, email, password, submit }) =
       </React.Fragment>
     )
 }
+
+LoginForm.propTypes = {
+  onTextFieldValueChange: PropTypes.func.isRequired,
+  email: PropTypes.string,
+  password: PropTypes.string,
+  submit: PropTypes.func.isRequired
+};
+
+LoginForm.defaultProps = {
+  email: '',
+  password: '',
+};

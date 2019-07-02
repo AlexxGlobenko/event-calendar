@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Button, Container, TextField, FormControl } from '@material-ui/core/';
-import styled from 'styled-components';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Button, TextField } from '@material-ui/core/';
 
 export const SignUpForm = ({ onTextFieldValueChange, email, password, name, submit }) => {
     return (
@@ -38,3 +38,17 @@ export const SignUpForm = ({ onTextFieldValueChange, email, password, name, subm
       </React.Fragment>
     )
 }
+
+SignUpForm.propTypes = {
+  onTextFieldValueChange: PropTypes.func.isRequired,
+  email: PropTypes.string,
+  password: PropTypes.string,
+  name: PropTypes.string,
+  submit: PropTypes.func.isRequired
+};
+
+SignUpForm.defaultProps = {
+  email: '',
+  password: '',
+  name: '',
+};
