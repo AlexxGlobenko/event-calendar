@@ -225,6 +225,7 @@ class Calendar extends Component {
             {
               this.getPageDates().map(day => (
                 <p
+                  key={`${day.year}-${day.month.toString().padStart(2, 0)}-${day.date.toString().padStart(2, 0)}`}
                   onTouchStart={() => this.handleButtonPress(day)} 
                   onTouchEnd={this.handleButtonRelease} 
                   onClick={() => this.setPickedDay(day)}
