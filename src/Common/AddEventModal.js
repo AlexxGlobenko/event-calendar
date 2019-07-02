@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Dialog, DialogContent, DialogActions, DialogTitle, DialogContentText, Button, TextField } from '@material-ui/core/';
-import InputMask from 'react-input-mask';
 import PropTypes from 'prop-types'
 
 export default class AddEventModal extends Component {

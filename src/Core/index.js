@@ -21,7 +21,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { user, login, signUp, logOut, isAuthorized } = this.props;
+    const { user, logOut, isAuthorized } = this.props;
     if (!isAuthorized) { return null }
     return (
       <BrowserRouter>
