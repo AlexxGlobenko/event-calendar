@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Header from '../Common/Header';
 import Calendar from '../Routes/Calendar/Calendar';
@@ -54,5 +55,16 @@ class App extends React.Component {
   }
 }
 
+App.propTypes = {
+  user: PropTypes.shape,
+  logOut: PropTypes.func.isRequired,
+  isAuthorized: PropTypes.bool,
+  isUserAuthenticated: PropTypes.func.isRequired,
+};
+
+App.defaultProps = {
+  user: null,
+  isAuthorized: false,
+};
 
 export default connect(App);

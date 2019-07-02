@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { LoginForm } from '../../Common/LoginForm';
@@ -63,6 +64,10 @@ class AuthFormComponent extends Component {
   }
 }
 
+AuthFormComponent.propTypes = {
+  signUp: PropTypes.func.isRequired,
+  login: PropTypes.func.isRequired,
+};
 
 export default withRouter(protector.ForNoLogin(connect(AuthFormComponent)));
 
