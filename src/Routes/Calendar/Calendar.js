@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import {
   monthNames,
@@ -249,6 +250,19 @@ class Calendar extends Component {
     );
   }
 }
+
+Calendar.propTypes = {
+  currentMonthEvents: PropTypes.shape(),
+  userData: PropTypes.shape(),
+  getCurrentMonthEvents: PropTypes.func.isRequired
+};
+
+Calendar.defaultProps = {
+  userData: null,
+  currentMonthEvents: null,
+};
+
+
 
 export default protector.ForLogin(connect(Calendar));
 
