@@ -36,6 +36,7 @@ export const getCurrentMonthEvents = (userId, substringForSearch) => {
 
 export const updateEvent = (editedEventData, userId, fullDate, eventKey) => {
   return (dispatch) => {
+    editedEventData.eventKey = eventKey;
     firebase.database().ref(`events/${userId}/${fullDate}/${eventKey}`).update({
       ...editedEventData
     }, (err) => {
