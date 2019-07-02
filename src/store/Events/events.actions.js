@@ -26,7 +26,6 @@ export const createEvent = (newEventObj, userId, fullDate) => {
 export const getCurrentMonthEvents = (userId, substringForSearch) => {
   return (dispatch) => {
     firebase.database().ref(`events/${userId}`).orderByKey().startAt(substringForSearch).endAt('\uf8ff').once('value', (snap) => {
-      console.log('snap val', snap.val());
       dispatch({
         type: GET_CURRENT_MONTH_EVENTS,
         eventsByDate: snap.val() ? snap.val() : null,
