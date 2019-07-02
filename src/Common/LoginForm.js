@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { Button, Container, TextField, FormControl } from '@material-ui/core/';
-import styled from 'styled-components';
+import React from 'react';
+import { Button, TextField } from '@material-ui/core/';
 
 export const LoginForm = ({ onTextFieldValueChange, email, password, submit }) => {
     return (
