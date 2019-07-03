@@ -37,6 +37,13 @@ export const events = (state = initialState, action) => {
           }
         }
       }
+    case 'DELETE_EVENT':
+      const tempCurrentMonthEvents = { ...state.currentMonthEvents };
+      delete tempCurrentMonthEvents[action.date][action.eventKey];
+      return {
+        ...state,
+        currentMonthEvents: tempCurrentMonthEvents,
+      }
     default:
       return state;
   }

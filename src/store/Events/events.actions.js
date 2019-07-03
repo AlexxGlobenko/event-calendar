@@ -3,6 +3,7 @@ import firebase from '../../Core/firebase';
 const CREATE_EVENT = 'CREATE_EVENT';
 const GET_CURRENT_MONTH_EVENTS = 'GET_CURRENT_MONTH_EVENTS';
 const UPDATE_EVENT = 'UPDATE_EVENT';
+const DELETE_EVENT = 'DELETE_EVENT';
 
 export const createEvent = (newEventObj, userId, fullDate) => {
   return async (dispatch) => {
@@ -51,5 +52,20 @@ export const updateEvent = (editedEventData, userId, fullDate, eventKey) => {
         })
       }
     })
+  }
+}
+
+export const deleteEvent = (userId, fullDate, eventKey) => {
+  return (dispatch) => {
+    firebase.database().ref(`events/${userId}/${fullDate}/${eventKey}`).set(null, (err) => {
+      if(err) {
+        alert(err.message);
+      } else {
+        dispatch({
+          type: DELETE_EVENT,
+          eventKey,
+          date: fullDate,
+        })
+    }})
   }
 }

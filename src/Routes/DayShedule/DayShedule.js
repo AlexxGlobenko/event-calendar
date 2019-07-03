@@ -57,6 +57,12 @@ class DayShedule extends Component {
     this.props.history.goBack();
   }
 
+  onDeleteClick = (eventKey) => {
+    const { deleteEvent, userData, location } = this.props;
+    let date = `${location.pathname.split('/')[3]}`;
+    deleteEvent(userData.uid, date, eventKey);
+  }
+
   render() {
     const { showAddEventModal, editableEventData, eventKey } = this.state;
     const { currentMonthEvents, location, gotEvents } = this.props;
@@ -102,6 +108,7 @@ class DayShedule extends Component {
                     event={event}
                     onEditClick={this.onEditClick}
                     eventKey={event.eventKey}
+                    onDeleteClick={this.onDeleteClick}
                   />
                 )
               })}

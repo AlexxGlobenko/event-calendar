@@ -10,7 +10,7 @@ import {
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import styled from 'styled-components';
 
-export const ExpansionEvent = ({ event, onEditClick, eventKey }) => {
+export const ExpansionEvent = ({ event, onEditClick, eventKey, onDeleteClick }) => {
   const now = new Date();
   const offset = -(now.getTimezoneOffset() * 60000);
   const timeMill = Date.parse(event.time) - offset;
@@ -44,7 +44,17 @@ export const ExpansionEvent = ({ event, onEditClick, eventKey }) => {
              color="primary"
              className="addEventButton"
              onClick={() => onEditClick(event, eventKey)}
-          >Edit</Button>
+          >
+            Edit
+        </Button>
+        <Button
+             variant="contained"
+             color="secondary"
+             className="addEventButton"
+             onClick={() => onDeleteClick(eventKey)}
+          >
+            Delete
+          </Button>
       </StyledExpansionPanelDetails>
     </StyledExpansionPanel>
   )
@@ -54,6 +64,7 @@ ExpansionEvent.propTypes = {
   event: PropTypes.shape().isRequired,
   onEditClick: PropTypes.func.isRequired,
   eventKey: PropTypes.string.isRequired,
+  onDeleteClick: PropTypes.func.isRequired,
 };
 
 const StyledExpansionPanel = styled(ExpansionPanel)`
